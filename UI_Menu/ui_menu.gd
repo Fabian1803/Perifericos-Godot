@@ -14,5 +14,5 @@ func _on_ExitButton_pressed():
 	add_child(confirm_dialog)
 	confirm_dialog.popup_centered()
 
-func _exit_game():
-	get_tree().quit()  # Cierra la aplicación
+func _exit_game():  ## Cierra la aplicación
+	get_tree().quit()

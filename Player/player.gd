@@ -9,6 +9,8 @@ var fuerza_salto: float = 5.0 ## fuerza del salto
 var en_suelo: bool = false ## indica si está en el suelo
 
 @onready var camara:Camera3D = $Camera3D
+@onready var raycast: RayCast3D = $Camera3D/RayCast3D
+
 
 ## Funciones
 func _ready():
@@ -19,7 +21,7 @@ func _physics_process(delta):
 	caminar(delta)
 	saltar()
 	move_and_slide()
-	en_suelo = is_on_floor() # Actualizar estado de en_suelo
+	en_suelo = is_on_floor()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -27,6 +29,8 @@ func _input(event):
 	elif event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			toggle_raton()
+		elif event.pressed and event.keycode == KEY_G:
+			detectar_objeto()
 
 func aplicar_gravedad(delta):
 	if not en_suelo:
@@ -55,4 +59,23 @@ func toggle_raton():
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)	
+
+func detectar_objeto():
+	var espacio = get_world_3d().direct_space_state
+	
+	var desde = camara.global_transform.origin
+	var hacia = desde + camara.global_transform.basis.z * -10  # 10 metros adelante
+	var parametros = PhysicsRayQueryParameters3D.new()
+	parametros.from = desde
+	parametros.to = hacia
+	var resultado = espacio.intersect_ray(parametros) ## Realizar la consulta raycast
+	if resultado:
+		var objeto = resultado.collider
+		if objeto.has_meta("descripcion"):
+			TTS.hablar(objeto.get_meta("descripcion"))
+			print(objeto.get_meta("descripcion"))
+		else:
+			print("Objeto sin descripción")
+	else:
+		print("No estás mirando ningún objeto")

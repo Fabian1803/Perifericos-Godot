@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bokvymgoh2kyf"]
 
-[ext_resource type="PackedScene" uid="uid://btu1a62xi3isf" path="res://Floor/floor.tscn" id="1_4bslc"]
 [ext_resource type="PackedScene" uid="uid://2835fwt6lkuf" path="res://Player/player.tscn" id="2_bs6va"]
+[ext_resource type="PackedScene" uid="uid://c7o4e0tpcdaxt" path="res://Floors/main_courtyard.tscn" id="2_lns6w"]
 
 [node name="GameMain" type="Node3D"]
 
-[node name="Floor" parent="." instance=ExtResource("1_4bslc")]
-
 [node name="Player" parent="." instance=ExtResource("2_bs6va")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48922, 0)
+
+[node name="MainCourtyard" parent="." instance=ExtResource("2_lns6w")]

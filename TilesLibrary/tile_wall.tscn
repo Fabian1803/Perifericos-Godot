@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpvm3xv48qwwu"]
+
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_7lngw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tksv3"]
+size = Vector3(5, 5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7lngw"]
+size = Vector3(5, 5, 0.5)
+
+[node name="TileWall" type="StaticBody3D"]
+script = ExtResource("1_7lngw")
+descripcion = "Estás viendo una pared"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tksv3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7lngw")

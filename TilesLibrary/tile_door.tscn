@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cygul1jtulf8y"]
+
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_eg63x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8foo"]
+size = Vector3(2, 4, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8foo"]
+albedo_color = Color(0.58852, 0.382132, 5.77569e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eg63x"]
+material = SubResource("StandardMaterial3D_x8foo")
+size = Vector3(2, 4, 0.3)
+
+[node name="TileDoor" type="StaticBody3D"]
+script = ExtResource("1_eg63x")
+descripcion = "estas viendo una puerta"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_x8foo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_eg63x")

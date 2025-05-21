@@ -15,6 +15,14 @@ run/main_scene="uid://dkle0cbhk10gf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/text_to_speech=true
+
+[autoload]
+
+TTS="*res://Scripts/TTS.gd"
+
 [input]
 
 btn_izquierda={
