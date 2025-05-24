@@ -29,7 +29,7 @@ func _input(event):
 	elif event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			toggle_raton()
-		elif event.pressed and event.keycode == KEY_G:
+		elif Input.is_action_just_pressed("btn_ver"):
 			detectar_objeto()
 
 func aplicar_gravedad(delta):
