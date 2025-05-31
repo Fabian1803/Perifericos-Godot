@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://6qlnecc7kn5b"]
+
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_22ivj"]
+[ext_resource type="PackedScene" uid="uid://ml2cvyc1qhgc" path="res://TilesLibrary/Models/silla/sillaobj/Chair 2.FBX" id="1_piuj8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_piuj8"]
+size = Vector3(0.4375, 0.858521, 0.0922852)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22ivj"]
+size = Vector3(0.464355, 0.492737, 0.479218)
+
+[node name="TileSilla" type="StaticBody3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+script = ExtResource("1_22ivj")
+descripcion = "Estas viendo una silla"
+
+[node name="Chair 2" parent="." instance=ExtResource("1_piuj8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00195312, 0.0166626, -0.264404)
+shape = SubResource("BoxShape3D_piuj8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000488249, -0.162262, 7.63188e-05)
+shape = SubResource("BoxShape3D_22ivj")

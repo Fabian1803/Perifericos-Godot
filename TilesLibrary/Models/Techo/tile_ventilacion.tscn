@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://y2ivy1tmwpot"]
+
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_iwfg3"]
+[ext_resource type="ArrayMesh" uid="uid://df14k6umyipge" path="res://TilesLibrary/Models/Techo/VentilacionObj/Luftgitter_low.obj" id="1_ply2x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00xrt"]
+size = Vector3(1, 0.0991821, 1.29716)
+
+[node name="TileVentilacion" type="StaticBody3D"]
+script = ExtResource("1_iwfg3")
+descripcion = "Estas viendo el techo"
+
+[node name="LuftgitterLow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.31134e-08, -0.377028, 0, 0.3, -1.64804e-08, 0, 0, 0, 0.309729, 0, 0, 0)
+mesh = ExtResource("1_ply2x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000760138, 0.306403, 0.351198)
+shape = SubResource("BoxShape3D_00xrt")

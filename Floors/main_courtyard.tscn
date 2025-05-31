@@ -1,23 +1,405 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7o4e0tpcdaxt"]
+[gd_scene load_steps=17 format=3 uid="uid://c7o4e0tpcdaxt"]
 
 [ext_resource type="PackedScene" uid="uid://bpvm3xv48qwwu" path="res://TilesLibrary/tile_wall.tscn" id="1_trwto"]
 [ext_resource type="PackedScene" uid="uid://digy80q0j0pvy" path="res://TilesLibrary/tile_floor.tscn" id="2_dxax3"]
-[ext_resource type="PackedScene" uid="uid://cygul1jtulf8y" path="res://TilesLibrary/tile_door.tscn" id="3_5n534"]
 [ext_resource type="PackedScene" uid="uid://dwmnl2isojd27" path="res://Floors/Sky/sky.tscn" id="4_jkuky"]
-[ext_resource type="PackedScene" uid="uid://b73by641scqiw" path="res://TilesLibrary/tile_board.tscn" id="5_dhsek"]
+[ext_resource type="PackedScene" uid="uid://84dst3dj7724" path="res://TilesLibrary/Models/MesaPc/tile_mesa_pc.tscn" id="5_dhsek"]
+[ext_resource type="PackedScene" uid="uid://6qlnecc7kn5b" path="res://TilesLibrary/Models/silla/tile_silla.tscn" id="6_f6s8l"]
+[ext_resource type="PackedScene" uid="uid://dpt67nxlwyyje" path="res://TilesLibrary/Models/Techo/tile_techo.tscn" id="7_5i030"]
+[ext_resource type="PackedScene" uid="uid://bd0e1cli0eq06" path="res://TilesLibrary/Models/Techo/tile_techo_luz.tscn" id="8_vlxqu"]
+[ext_resource type="PackedScene" uid="uid://de5gpqkju5fe3" path="res://TilesLibrary/Models/Muros/tile_muro_vidrio_amplio_interno.tscn" id="10_4x2v4"]
+[ext_resource type="PackedScene" uid="uid://dl5uh6i8i2ork" path="res://TilesLibrary/Models/Pizarra/tile_pizarra.tscn" id="10_p84bo"]
+[ext_resource type="PackedScene" uid="uid://dt5fea57rwjjc" path="res://TilesLibrary/Models/Muros/tile_muro_vidrio_aplio.tscn" id="11_fj2bc"]
+[ext_resource type="PackedScene" uid="uid://cxtop0hf3xhlo" path="res://TilesLibrary/Models/Pcs/Pc1/tile_pc_1.tscn" id="11_p84bo"]
+[ext_resource type="PackedScene" uid="uid://y2ivy1tmwpot" path="res://TilesLibrary/Models/Techo/tile_ventilacion.tscn" id="12_kw78v"]
+[ext_resource type="PackedScene" uid="uid://wxws2xk2wubm" path="res://TilesLibrary/Models/Muros/tile_muro_puerta_vidrio_amplio_interno_.tscn" id="13_4x2v4"]
+[ext_resource type="PackedScene" uid="uid://7efpesf20tfs" path="res://TilesLibrary/Models/Puertas/tile_puerta01.tscn" id="14_fj2bc"]
+[ext_resource type="PackedScene" uid="uid://cyu1higp1fq1n" path="res://TilesLibrary/Models/Varandilla/tile_varandilla_v.tscn" id="15_vsixj"]
+[ext_resource type="PackedScene" uid="uid://kirr15sg5ic4" path="res://TilesLibrary/Models/Varandilla/tile_varandilla_h.tscn" id="16_er8dq"]
 
 [node name="MainCourtyard" type="Node3D"]
 
-[node name="TileWall" parent="." instance=ExtResource("1_trwto")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51194, -5.26592)
-
 [node name="TileFloor" parent="." instance=ExtResource("2_dxax3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137136, 0)
-
-[node name="TileDoor" parent="." instance=ExtResource("3_5n534")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14166, 1.67284, 4.50159)
+transform = Transform3D(1.95435, 0, 0, 0, 1, 0, 0, 0, 1.58907, 0.197202, -0.137136, 0.00553417)
 
 [node name="Sky" parent="." instance=ExtResource("4_jkuky")]
 
-[node name="BoardBase" parent="." instance=ExtResource("5_dhsek")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.644702, 0.112864, 2.55181)
+[node name="Pcs" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="TileMesaPc" parent="Pcs" instance=ExtResource("5_dhsek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05588, 1, 5.13807)
+
+[node name="filade2_1" type="Node3D" parent="Pcs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.836453, 0, -6.24088)
+
+[node name="TileMesaPc2" parent="Pcs/filade2_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/filade2_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="filade3" type="Node3D" parent="Pcs"]
+
+[node name="filade3_1" type="Node3D" parent="Pcs/filade3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852372, 0, 1.59237)
+
+[node name="TileMesaPc2" parent="Pcs/filade3/filade3_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/filade3/filade3_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/filade3/filade3_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="filade3_2" type="Node3D" parent="Pcs/filade3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852372, 0, -1.01365)
+
+[node name="TileMesaPc2" parent="Pcs/filade3/filade3_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/filade3/filade3_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/filade3/filade3_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="filade3_3" type="Node3D" parent="Pcs/filade3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852371, 0, -3.69655)
+
+[node name="TileMesaPc2" parent="Pcs/filade3/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/filade3/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/filade3/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="filade4" type="Node3D" parent="Pcs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4057, 0, 1.17197e-06)
+
+[node name="filade3_1" type="Node3D" parent="Pcs/filade4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852372, 0, 1.59237)
+
+[node name="TileMesaPc2" parent="Pcs/filade4/filade3_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/filade4/filade3_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/filade4/filade3_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="filade3_2" type="Node3D" parent="Pcs/filade4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852372, 0, -1.01365)
+
+[node name="TileMesaPc2" parent="Pcs/filade4/filade3_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/filade4/filade3_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/filade4/filade3_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="filade3_3" type="Node3D" parent="Pcs/filade4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852371, 0, -3.69655)
+
+[node name="TileMesaPc2" parent="Pcs/filade4/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/filade4/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/filade4/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="fila de 4" type="Node3D" parent="Pcs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.871716, 0, -7.62078e-08)
+
+[node name="filade4_1" type="Node3D" parent="Pcs/fila de 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.95239, 0, 1.58004)
+
+[node name="TileMesaPc2" parent="Pcs/fila de 4/filade4_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/fila de 4/filade4_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/fila de 4/filade4_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="TileMesaPc5" parent="Pcs/fila de 4/filade4_1" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.02912, 1, 0.683576)
+
+[node name="filade4_2" type="Node3D" parent="Pcs/fila de 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.95239, 0, -0.913005)
+
+[node name="TileMesaPc2" parent="Pcs/fila de 4/filade4_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/fila de 4/filade4_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/fila de 4/filade4_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="TileMesaPc5" parent="Pcs/fila de 4/filade4_2" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.02912, 1, 0.683576)
+
+[node name="filade4_3" type="Node3D" parent="Pcs/fila de 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.95239, 0, -3.57642)
+
+[node name="TileMesaPc2" parent="Pcs/fila de 4/filade4_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/fila de 4/filade4_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/fila de 4/filade4_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="TileMesaPc5" parent="Pcs/fila de 4/filade4_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.02912, 1, 0.683576)
+
+[node name="filade3_3" type="Node3D" parent="Pcs/fila de 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92984, 0, -5.94458)
+
+[node name="TileMesaPc2" parent="Pcs/fila de 4/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.32371, 1, 0.683575)
+
+[node name="TileMesaPc3" parent="Pcs/fila de 4/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.88466, 1, 0.683576)
+
+[node name="TileMesaPc4" parent="Pcs/fila de 4/filade3_3" instance=ExtResource("5_dhsek")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44719, 1, 0.683576)
+
+[node name="sillas" type="Node3D" parent="."]
+
+[node name="sillap" parent="sillas" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(0.864719, 0, -0.832022, 0, 1.2, 0, 0.832022, 0, 0.864719, 8.37019, 0.642953, -6.50388)
+
+[node name="filasilla1" type="Node3D" parent="sillas"]
+
+[node name="TileSilla2" parent="sillas/filasilla1" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 8.13852, 0.642953, -2.01808)
+
+[node name="TileSilla3" parent="sillas/filasilla1" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.1868, 0, -0.177516, 0, 1.2, 0, 0.177516, 0, -1.1868, 6.7299, 0.642953, -1.2811)
+
+[node name="TileSilla4" parent="sillas/filasilla1" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.12643, 0, 0.413709, 0, 1.2, 0, -0.413709, 0, -1.12643, 5.21725, 0.642953, -0.923428)
+
+[node name="filasilla8" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4333, 0, 0)
+
+[node name="TileSilla2" parent="sillas/filasilla8" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 8.13852, 0.642953, -2.01808)
+
+[node name="TileSilla3" parent="sillas/filasilla8" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.1868, 0, -0.177516, 0, 1.2, 0, 0.177516, 0, -1.1868, 6.7299, 0.642953, -1.98878)
+
+[node name="TileSilla4" parent="sillas/filasilla8" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.19809, 0, 0.067613, 0, 1.2, 0, -0.067613, 0, -1.19809, 5.21725, 0.642953, -1.99939)
+
+[node name="filasilla9" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4333, 0, 2.44289)
+
+[node name="TileSilla2" parent="sillas/filasilla9" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 8.13852, 0.642953, -0.591594)
+
+[node name="TileSilla3" parent="sillas/filasilla9" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.1897, 0, 0.15686, 0, 1.2, 0, -0.15686, 0, -1.1897, 6.7299, 0.642953, -1.50129)
+
+[node name="TileSilla4" parent="sillas/filasilla9" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.12643, 0, 0.413709, 0, 1.2, 0, -0.413709, 0, -1.12643, 5.21725, 0.642953, -1.10191)
+
+[node name="filasilla10" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4333, 0, 5.48748)
+
+[node name="TileSilla2" parent="sillas/filasilla10" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 8.13852, 0.642953, -2.01808)
+
+[node name="TileSilla3" parent="sillas/filasilla10" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.1868, 0, -0.177516, 0, 1.2, 0, 0.177516, 0, -1.1868, 6.7299, 0.642953, -1.2811)
+
+[node name="TileSilla4" parent="sillas/filasilla10" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-0.856444, 0, 0.840538, 0, 1.2, 0, -0.840538, 0, -0.856444, 5.21725, 0.642953, -1.3663)
+
+[node name="filasilla2" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.56068)
+
+[node name="TileSilla2" parent="sillas/filasilla2" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-0.757461, 0, -0.930727, 0, 1.2, 0, 0.930727, 0, -0.757461, 8.13852, 0.642953, -1.04188)
+
+[node name="TileSilla3" parent="sillas/filasilla2" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.18903, 0, 0.161883, 0, 1.2, 0, -0.161883, 0, -1.18903, 6.71009, 0.642953, -1.52995)
+
+[node name="TileSilla4" parent="sillas/filasilla2" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 5.21725, 0.642953, -1.43581)
+
+[node name="filasilla3" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.58647)
+
+[node name="TileSilla2" parent="sillas/filasilla3" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.18392, 0, -0.195805, 0, 1.2, 0, 0.195805, 0, -1.18392, 8.13852, 0.642953, -1.75361)
+
+[node name="TileSilla3" parent="sillas/filasilla3" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.19802, 0, 0.0689094, 0, 1.2, 0, -0.0689094, 0, -1.19802, 6.71009, 0.642953, -1.72621)
+
+[node name="TileSilla4" parent="sillas/filasilla3" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 5.21725, 0.642953, -1.96264)
+
+[node name="filasilla11" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80683, 0, 8.54706)
+
+[node name="TileSilla2" parent="sillas/filasilla11" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.18392, 0, -0.195805, 0, 1.2, 0, 0.195805, 0, -1.18392, 8.13852, 0.642953, -1.75361)
+
+[node name="TileSilla3" parent="sillas/filasilla11" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.19802, 0, 0.0689094, 0, 1.2, 0, -0.0689094, 0, -1.19802, 6.71009, 0.642953, -1.72621)
+
+[node name="TileSilla4" parent="sillas/filasilla11" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 5.21725, 0.642953, -1.96264)
+
+[node name="filasilla5" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88837, 0, 5.58647)
+
+[node name="TileSilla2" parent="sillas/filasilla5" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.18392, 0, -0.195805, 0, 1.2, 0, 0.195805, 0, -1.18392, 8.13852, 0.642953, -1.75361)
+
+[node name="TileSilla3" parent="sillas/filasilla5" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.19802, 0, 0.0689094, 0, 1.2, 0, -0.0689094, 0, -1.19802, 6.71009, 0.642953, -2.2684)
+
+[node name="TileSilla4" parent="sillas/filasilla5" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 5.21725, 0.642953, -1.78056)
+
+[node name="TileSilla5" parent="sillas/filasilla5" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 3.80617, 0.642953, -1.60556)
+
+[node name="filasilla6" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88837, 0, 2.93488)
+
+[node name="TileSilla2" parent="sillas/filasilla6" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.18392, 0, -0.195805, 0, 1.2, 0, 0.195805, 0, -1.18392, 8.13852, 0.642953, -1.49503)
+
+[node name="TileSilla3" parent="sillas/filasilla6" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.19802, 0, 0.0689094, 0, 1.2, 0, -0.0689094, 0, -1.19802, 6.71009, 0.642953, -1.15655)
+
+[node name="TileSilla4" parent="sillas/filasilla6" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 5.21725, 0.642953, -1.40408)
+
+[node name="TileSilla5" parent="sillas/filasilla6" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 3.80617, 0.642953, -2.42846)
+
+[node name="filasilla4" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.75901)
+
+[node name="TileSilla2" parent="sillas/filasilla4" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-0.836283, 0, -0.8606, 0, 1.2, 0, 0.8606, 0, -0.836283, 8.13852, 0.642953, -1.11409)
+
+[node name="TileSilla3" parent="sillas/filasilla4" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.19802, 0, 0.0689094, 0, 1.2, 0, -0.0689094, 0, -1.19802, 6.69957, 0.642953, -1.00501)
+
+[node name="filasilla7" type="Node3D" parent="sillas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88837, 0, 0.685762)
+
+[node name="TileSilla2" parent="sillas/filasilla7" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.18392, 0, -0.195805, 0, 1.2, 0, 0.195805, 0, -1.18392, 8.13852, 0.642953, -1.75361)
+
+[node name="TileSilla3" parent="sillas/filasilla7" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.19802, 0, 0.0689094, 0, 1.2, 0, -0.0689094, 0, -1.19802, 6.71009, 0.642953, -2.11252)
+
+[node name="TileSilla4" parent="sillas/filasilla7" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.14411, 0, -0.361945, 0, 1.2, 0, 0.361945, 0, -1.14411, 5.21725, 0.642953, -2.17339)
+
+[node name="TileSilla5" parent="sillas/filasilla7" instance=ExtResource("6_f6s8l")]
+transform = Transform3D(-1.11024, 0, 0.455386, 0, 1.2, 0, -0.455386, 0, -1.11024, 3.80617, 0.642953, -2.24277)
+
+[node name="Techo" type="Node3D" parent="."]
+
+[node name="TileTecho" parent="Techo" instance=ExtResource("7_5i030")]
+transform = Transform3D(1.95122, 0, 0, 0, 1, 0, 0, 0, 1.60176, 0.213975, 5.51438, -0.0639)
+
+[node name="TileTechoLuz" parent="Techo" instance=ExtResource("8_vlxqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80841, 5.42844, -2.60961)
+
+[node name="TilePizarra" parent="." instance=ExtResource("10_p84bo")]
+transform = Transform3D(5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, 0.336296, 2.87896, -7.98536)
+
+[node name="muros" type="Node3D" parent="."]
+
+[node name="Wall2" type="Node3D" parent="muros"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.9805)
+
+[node name="col1" parent="muros/Wall2" instance=ExtResource("1_trwto")]
+transform = Transform3D(0.2, 0, 0, 0, 1.2, 0, 0, 0, 1, 9.4772, 2.6192, -7.99532)
+
+[node name="col2" parent="muros/Wall2" instance=ExtResource("1_trwto")]
+transform = Transform3D(0.2, 0, 0, 0, 1.2, 0, 0, 0, 1, -9.04538, 2.6192, -7.99532)
+
+[node name="wall1" parent="muros/Wall2" instance=ExtResource("1_trwto")]
+transform = Transform3D(3.63903, 0, 0, 0, 1.2, 0, 0, 0, 0.5, 0.190358, 2.618, -8.11609)
+
+[node name="Wall1" type="Node3D" parent="muros"]
+
+[node name="col1" parent="muros/Wall1" instance=ExtResource("1_trwto")]
+transform = Transform3D(0.2, 0, 0, 0, 1.2, 0, 0, 0, 1, 9.4772, 2.6192, -7.99532)
+
+[node name="col2" parent="muros/Wall1" instance=ExtResource("1_trwto")]
+transform = Transform3D(0.2, 0, 0, 0, 1.2, 0, 0, 0, 1, -9.04538, 2.6192, -7.99532)
+
+[node name="wall1" parent="muros/Wall1" instance=ExtResource("1_trwto")]
+transform = Transform3D(3.63903, 0, 0, 0, 1.2, 0, 0, 0, 0.5, 0.190358, 2.618, -8.11609)
+
+[node name="TileMuroVidrio" parent="muros" instance=ExtResource("10_4x2v4")]
+transform = Transform3D(-4.80825e-08, 0, 1, 0, 1.078, 0, -1.1, 0, -4.37114e-08, 9.9057, 2.77168, 5.8233)
+
+[node name="TileMuroVidrio2" parent="muros" instance=ExtResource("10_4x2v4")]
+transform = Transform3D(-4.80825e-08, 0, 1, 0, 1.078, 0, -1.1, 0, -4.37114e-08, 9.9057, 2.77168, 1.93576)
+
+[node name="TileMuroVidrio3" parent="muros" instance=ExtResource("10_4x2v4")]
+transform = Transform3D(-4.80825e-08, 0, 1, 0, 1.078, 0, -1.1, 0, -4.37114e-08, 9.9057, 2.77168, -1.96231)
+
+[node name="TileMuroVidrio4" parent="muros" instance=ExtResource("10_4x2v4")]
+transform = Transform3D(-4.80825e-08, 0, 1, 0, 1.078, 0, -1.1, 0, -4.37114e-08, 9.9057, 2.77168, -5.76659)
+
+[node name="TileMuroVidrio5" parent="muros" instance=ExtResource("11_fj2bc")]
+transform = Transform3D(-4.80825e-08, 0, 1.1, 0, 1.078, 0, -1.1, 0, -4.80825e-08, -9.5029, 2.7841, 5.78372)
+
+[node name="TileMuroVidrio6" parent="muros" instance=ExtResource("11_fj2bc")]
+transform = Transform3D(-4.80825e-08, 0, 1.1, 0, 1.078, 0, -1.1, 0, -4.80825e-08, -9.5029, 2.7841, 1.95153)
+
+[node name="TileMuroVidrio7" parent="muros" instance=ExtResource("11_fj2bc")]
+transform = Transform3D(-4.80825e-08, 0, 1.1, 0, 1.078, 0, -1.1, 0, -4.80825e-08, -9.5029, 2.7841, -1.93031)
+
+[node name="TileMuroVidrio8" parent="muros" instance=ExtResource("13_4x2v4")]
+transform = Transform3D(-4.80825e-08, 0, 1.1, 0, 1.078, 0, -1.1, 0, -4.80825e-08, -9.50598, 2.74233, -5.78664)
+
+[node name="TilePc1" parent="." instance=ExtResource("11_p84bo")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 8.00283, 1.02898, -5.1349)
+
+[node name="TileVentilacion" parent="." instance=ExtResource("12_kw78v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.02482, 4.89067, -2.62685)
+
+[node name="TileMuroVidrio5" parent="." instance=ExtResource("14_fj2bc")]
+transform = Transform3D(-0.000274637, 0, 0.561876, 0, 1.11173, 0, -1.21019, 0, -0.00012751, -9.499, 1.87457, -6.73329)
+
+[node name="Varandilla" type="Node3D" parent="."]
+
+[node name="TileVarandilla" parent="Varandilla" instance=ExtResource("15_vsixj")]
+transform = Transform3D(0.15, 0, 0, 0, 0.5, 0, 0, 0, 2.61854, 9.59489, 1.14182, 0.0503685)
+
+[node name="TileVarandilla2" parent="Varandilla" instance=ExtResource("16_er8dq")]
+transform = Transform3D(0.15, 0, 0, 0, 0.5, 0, 0, 0, 0.15, 9.59411, 0.612864, -5.92096)
+
+[node name="TileVarandilla3" parent="Varandilla" instance=ExtResource("16_er8dq")]
+transform = Transform3D(0.15, 0, 0, 0, 0.5, 0, 0, 0, 0.15, 9.59411, 0.612864, -1.95075)
+
+[node name="TileVarandilla4" parent="Varandilla" instance=ExtResource("16_er8dq")]
+transform = Transform3D(0.149996, 0, -0.00114143, 0, 0.5, 0, 0.00114143, 0, 0.149996, 9.59411, 0.612864, 1.90111)
+
+[node name="TileVarandilla5" parent="Varandilla" instance=ExtResource("16_er8dq")]
+transform = Transform3D(0.149996, 0, -0.00114143, 0, 0.5, 0, 0.00114143, 0, 0.149996, 9.59411, 0.612864, 6.31199)

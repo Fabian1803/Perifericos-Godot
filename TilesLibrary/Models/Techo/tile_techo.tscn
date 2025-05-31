@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpt67nxlwyyje"]
+
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_7j7h7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uler8"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uler8"]
+data = PackedVector3Array(-5, 0.1, 5, 5, 0.1, 5, -5, -0.1, 5, 5, 0.1, 5, 5, -0.1, 5, -5, -0.1, 5, 5, 0.1, -5, -5, 0.1, -5, 5, -0.1, -5, -5, 0.1, -5, -5, -0.1, -5, 5, -0.1, -5, 5, 0.1, 5, 5, 0.1, -5, 5, -0.1, 5, 5, 0.1, -5, 5, -0.1, -5, 5, -0.1, 5, -5, 0.1, -5, -5, 0.1, 5, -5, -0.1, -5, -5, 0.1, 5, -5, -0.1, 5, -5, -0.1, -5, 5, 0.1, 5, -5, 0.1, 5, 5, 0.1, -5, -5, 0.1, 5, -5, 0.1, -5, 5, 0.1, -5, -5, -0.1, 5, 5, -0.1, 5, -5, -0.1, -5, 5, -0.1, 5, 5, -0.1, -5, -5, -0.1, -5)
+
+[node name="TileTecho" type="StaticBody3D"]
+script = ExtResource("1_7j7h7")
+descripcion = "estas viendo el techo"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_uler8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_uler8")

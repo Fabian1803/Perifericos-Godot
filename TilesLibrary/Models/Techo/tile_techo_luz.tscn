@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd0e1cli0eq06"]
+
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_84h7i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50yow"]
+albedo_color = Color(1, 1, 0.635294, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_84h7i"]
+material = SubResource("StandardMaterial3D_50yow")
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x4vgy"]
+data = PackedVector3Array(-1, 0.05, 1, 1, 0.05, 1, -1, -0.05, 1, 1, 0.05, 1, 1, -0.05, 1, -1, -0.05, 1, 1, 0.05, -1, -1, 0.05, -1, 1, -0.05, -1, -1, 0.05, -1, -1, -0.05, -1, 1, -0.05, -1, 1, 0.05, 1, 1, 0.05, -1, 1, -0.05, 1, 1, 0.05, -1, 1, -0.05, -1, 1, -0.05, 1, -1, 0.05, -1, -1, 0.05, 1, -1, -0.05, -1, -1, 0.05, 1, -1, -0.05, 1, -1, -0.05, -1, 1, 0.05, 1, -1, 0.05, 1, 1, 0.05, -1, -1, 0.05, 1, -1, 0.05, -1, 1, 0.05, -1, -1, -0.05, 1, 1, -0.05, 1, -1, -0.05, -1, 1, -0.05, 1, 1, -0.05, -1, -1, -0.05, -1)
+
+[node name="TileTechoLuz" type="StaticBody3D"]
+script = ExtResource("1_84h7i")
+descripcion = "Estas viendo el techo"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_84h7i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_x4vgy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.83947, 0.463434, 1)
+light_energy = 5.0
+omni_range = 9.3693

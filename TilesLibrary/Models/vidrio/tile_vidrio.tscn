@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cigcf2tao448j"]
+
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_ayts4"]
+[ext_resource type="Shader" uid="uid://dbj1yyyvjbr15" path="res://TilesLibrary/Models/vidrio/vidrio.gdshader" id="1_cjslf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayts4"]
+render_priority = 0
+shader = ExtResource("1_cjslf")
+shader_parameter/tint_color = Color(1, 1, 0.960784, 0.611765)
+shader_parameter/backlight_color = Color(0.875, 0.875, 0.875, 1)
+shader_parameter/noise_strenght = 0.005
+shader_parameter/roughness = 0.0
+shader_parameter/normal_strenght = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_3he21"]
+material = SubResource("ShaderMaterial_ayts4")
+size = Vector3(3, 5, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cjslf"]
+data = PackedVector3Array(-1.5, 2.5, 0.1, 1.5, 2.5, 0.1, -1.5, -2.5, 0.1, 1.5, 2.5, 0.1, 1.5, -2.5, 0.1, -1.5, -2.5, 0.1, 1.5, 2.5, -0.1, -1.5, 2.5, -0.1, 1.5, -2.5, -0.1, -1.5, 2.5, -0.1, -1.5, -2.5, -0.1, 1.5, -2.5, -0.1, 1.5, 2.5, 0.1, 1.5, 2.5, -0.1, 1.5, -2.5, 0.1, 1.5, 2.5, -0.1, 1.5, -2.5, -0.1, 1.5, -2.5, 0.1, -1.5, 2.5, -0.1, -1.5, 2.5, 0.1, -1.5, -2.5, -0.1, -1.5, 2.5, 0.1, -1.5, -2.5, 0.1, -1.5, -2.5, -0.1, 1.5, 2.5, 0.1, -1.5, 2.5, 0.1, 1.5, 2.5, -0.1, -1.5, 2.5, 0.1, -1.5, 2.5, -0.1, 1.5, 2.5, -0.1, -1.5, -2.5, 0.1, 1.5, -2.5, 0.1, -1.5, -2.5, -0.1, 1.5, -2.5, 0.1, 1.5, -2.5, -0.1, -1.5, -2.5, -0.1)
+
+[node name="TileVidrio" type="StaticBody3D"]
+script = ExtResource("1_ayts4")
+descripcion = "estas viendo una ventana"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3he21")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_cjslf")

@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://2lfohek3bwob"]
+[gd_scene load_steps=8 format=3 uid="uid://2lfohek3bwob"]
 
 [ext_resource type="Script" uid="uid://cbe7f77tats24" path="res://UI_Pause_menu/ui_pause_menu.gd" id="1_8yiea"]
+[ext_resource type="Texture2D" uid="uid://bquycmx3w2own" path="res://Assets/Default/Panel/panel-010.png" id="2_i60es"]
+[ext_resource type="FontFile" uid="uid://ubm5bs74qxxj" path="res://Assets/WDXLLubrifontTC-Regular.ttf" id="3_i5rmr"]
+[ext_resource type="Texture2D" uid="uid://nhj2dldkhvil" path="res://Assets/Default/Divider/divider-005.png" id="4_fdvva"]
+[ext_resource type="StyleBox" uid="uid://l7hyho5rw6kh" path="res://Assets/hoverbtnpause.tres" id="5_jbai3"]
+[ext_resource type="StyleBox" uid="uid://bo22gtnq2axl3" path="res://Assets/normalbtnpause.tres" id="6_xpvua"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqu11"]
+texture = ExtResource("2_i60es")
+texture_margin_left = 12.432
+texture_margin_top = 12.432
+texture_margin_right = 12.432
+texture_margin_bottom = 12.432
+modulate_color = Color(0, 0, 0, 1)
 
 [node name="UiPauseMenu" type="Control"]
 process_mode = 3
@@ -12,31 +25,97 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8yiea")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.5
-offset_top = -50.5
-offset_right = 54.5
-offset_bottom = 50.5
+offset_left = -140.0
+offset_top = -154.5
+offset_right = 140.0
+offset_bottom = 154.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gqu11")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 34.0
+offset_right = 272.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("3_i5rmr")
+theme_override_font_sizes/font_size = 50
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="Divider-006" type="Sprite2D" parent="Panel/Label"]
+position = Vector2(34.5, 32.5)
+rotation = -3.14159
+scale = Vector2(0.7, 1.127)
+texture = ExtResource("4_fdvva")
+
+[node name="Divider-007" type="Sprite2D" parent="Panel/Label"]
+position = Vector2(226.5, 32.5)
+scale = Vector2(0.7, 1.127)
+texture = ExtResource("4_fdvva")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -24.0
+offset_right = 122.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ButtonReanudar" type="Button" parent="VBoxContainer"]
+[node name="ButtonReanudar" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i5rmr")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("5_jbai3")
+theme_override_styles/pressed = ExtResource("5_jbai3")
+theme_override_styles/normal = ExtResource("6_xpvua")
 text = "Reanudar"
 
-[node name="ButtonAjustes" type="Button" parent="VBoxContainer"]
+[node name="ButtonAjustes" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i5rmr")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("5_jbai3")
+theme_override_styles/pressed = ExtResource("5_jbai3")
+theme_override_styles/normal = ExtResource("6_xpvua")
 text = "Ajustes"
 
-[node name="ButtonSalirMenu" type="Button" parent="VBoxContainer"]
+[node name="ButtonSalirMenu" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i5rmr")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("5_jbai3")
+theme_override_styles/pressed = ExtResource("5_jbai3")
+theme_override_styles/normal = ExtResource("6_xpvua")
 text = "Salir al menu"
 
-[connection signal="pressed" from="VBoxContainer/ButtonReanudar" to="." method="toggle_pause"]
-[connection signal="pressed" from="VBoxContainer/ButtonSalirMenu" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonReanudar" to="." method="toggle_pause"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonSalirMenu" to="." method="_on_ExitButton_pressed"]

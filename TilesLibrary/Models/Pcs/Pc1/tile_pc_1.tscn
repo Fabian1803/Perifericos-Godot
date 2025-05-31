@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxtop0hf3xhlo"]
+
+[ext_resource type="PackedScene" uid="uid://diq045axaxv4o" path="res://TilesLibrary/Models/Pcs/Pc1/3d-model.fbx" id="1_rqrva"]
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="2_m4xvl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4xvl"]
+size = Vector3(0.09552, 0.341919, 0.516541)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e7nhx"]
+size = Vector3(0.157959, 0.0164795, 0.463989)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q2to1"]
+height = 0.0377197
+radius = 0.0415039
+
+[node name="TilePc1" type="Node3D"]
+
+[node name="3d-model" parent="." instance=ExtResource("1_rqrva")]
+
+[node name="monitor" type="StaticBody3D" parent="."]
+script = ExtResource("2_m4xvl")
+descripcion = "estas viendo un monitor"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="monitor"]
+transform = Transform3D(0.949699, 0, -0.313164, 0, 1, 0, 0.313164, 0, 0.949699, 0.176024, 0.175232, -0.0405955)
+shape = SubResource("BoxShape3D_m4xvl")
+
+[node name="teclado" type="StaticBody3D" parent="."]
+script = ExtResource("2_m4xvl")
+descripcion = "estas viendo un teclado"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="teclado"]
+transform = Transform3D(0.944307, 0, 0.329064, 0, 1, 0, -0.329064, 0, 0.944307, -0.174783, 0.0108032, -0.0538198)
+shape = SubResource("BoxShape3D_e7nhx")
+
+[node name="mause" type="StaticBody3D" parent="."]
+script = ExtResource("2_m4xvl")
+descripcion = "Estas viendo el raton"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mause"]
+transform = Transform3D(0.810972, 0, 0.585085, 0, 1, 0, -0.585085, 0, 0.810972, 0.00495456, 0.0216161, 0.258042)
+shape = SubResource("CylinderShape3D_q2to1")

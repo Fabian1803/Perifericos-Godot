@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl5uh6i8i2ork"]
+
+[ext_resource type="PackedScene" uid="uid://dn4grg3u3x62v" path="res://TilesLibrary/Models/Pizarra/uploads_files_3002555_board.fbx" id="1_ay2s4"]
+[ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="2_r0cnp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0cnp"]
+size = Vector3(0.244629, 7.79327, 13.1877)
+
+[node name="TilePizarra" type="StaticBody3D"]
+script = ExtResource("2_r0cnp")
+descripcion = "Estas viendo una pizarra"
+
+[node name="uploads_files_3002555_board" parent="." instance=ExtResource("1_ay2s4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041748, -0.0233727, 0.00913239)
+shape = SubResource("BoxShape3D_r0cnp")

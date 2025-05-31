@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpvm3xv48qwwu"]
+[gd_scene load_steps=5 format=3 uid="uid://bpvm3xv48qwwu"]
 
 [ext_resource type="Script" uid="uid://ssfraqafvj7q" path="res://TilesLibrary/tile_base.gd" id="1_7lngw"]
+[ext_resource type="Material" uid="uid://dab6d76j8eu7m" path="res://Assets/Material/Pared01.tres" id="2_1wx73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tksv3"]
 size = Vector3(5, 5, 0.5)
@@ -16,4 +17,5 @@ descripcion = "Estás viendo una pared"
 shape = SubResource("BoxShape3D_tksv3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_1wx73")
 mesh = SubResource("BoxMesh_7lngw")
